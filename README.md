@@ -1,17 +1,17 @@
 
 <!-- README.md is generated from README.Rmd. Please edit that file -->
 
-# sigreport
+# sigstory
 
 <!-- badges: start -->
 
 [![Lifecycle:
 experimental](https://img.shields.io/badge/lifecycle-experimental-orange.svg)](https://lifecycle.r-lib.org/articles/stages.html#experimental)
 [![CRAN
-status](https://www.r-pkg.org/badges/version/sigreport)](https://CRAN.R-project.org/package=sigreport)
+status](https://www.r-pkg.org/badges/version/sigstory)](https://CRAN.R-project.org/package=sigstory)
 <!-- badges: end -->
 
-sigreport produces interactive HTML reports summarising the results of
+sigstory produces interactive HTML reports summarising the results of
 mutational signature analyses.
 
 > **Warning** This package is in early development and not yet ready for
@@ -19,13 +19,13 @@ mutational signature analyses.
 
 ## Installation
 
-You can install the development version of sigreport like so:
+You can install the development version of sigstory like so:
 
 ``` r
 if (!require("pak", quietly = TRUE))
     install.packages("pak")
 
-pak::pak("selkamand/sigreport")
+pak::pak("selkamand/sigstory")
 ```
 
 ## Quick Start
