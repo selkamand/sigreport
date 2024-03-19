@@ -1,0 +1,104 @@
+---
+title: "sigstory_template"
+format: html
+editor: visual
+---
+
+## Mutational Signature Report
+
+```{r, echo = FALSE, output = FALSE}
+# Libraries
+require(bslib)
+require(bsicons)
+require(shiny)
+require(htmltools)
+require(glue)
+```
+
+```{r config, echo = FALSE, output = FALSE}
+pal_ui = c(
+  black = "#1F292E", 
+  primary = "#4A90E2",
+  success = "#82DD55",
+  error = "#E23636",
+  warning = "#EDB95E",
+  darkgrey = "#415058",
+  midgrey = "#C8CDD0",
+  lightgrey = "#F2F2F3"
+  )
+
+pal_ui2 = c(
+  white= "#FDFDFD",
+  black= "#000000",
+  pale_grey = "#F1F1F1"
+)
+
+value_box_themes <- list(
+  warning = value_box_theme(
+      name = "warning",
+      fg = pal_ui['black'], 
+      bg = pal_ui['warning']
+    ),
+  fail = value_box_theme(
+      name = "fail",
+      fg = pal_ui['black'], 
+      bg = pal_ui['error']
+    ),
+  success = value_box_theme(
+      name = "success",
+      fg = pal_ui['black'], 
+      bg = pal_ui['success']
+    ),
+  boring = value_box_theme(
+    name = "boring",
+      fg = pal_ui['black'],
+      bg = pal_ui['lightgrey']
+    ),
+  boring2 = value_box_theme(
+    name = "boring2",
+      fg = pal_ui2['black'],
+      bg = pal_ui2['white']
+    )
+)
+```
+
+```{r test_data, echo = FALSE, output = FALSE}
+number_of_mutations = 850
+model_vs_observed_cosine = 0.99
+unasigned_mutations = 10
+signature_class = "SBS"
+```
+
+```{r, echo = FALSE}
+
+card(
+  value_box(
+    title = p(glue("Number of {signature_class} Mutations")),
+    value = div(glue("{number_of_mutations} mutations")),
+    showcase = 
+      icon("dna")
+    ,
+    theme = value_box_themes[["boring2"]]
+  ),
+    value_box(
+    title = p(glue("Similarity Between Model and Observed Profile")),
+    value = div(glue("{round(model_vs_observed_cosine, digits = 3)}")),
+    showcase = 
+      bs_icon("intersect")
+    ,
+    theme = value_box_themes[["boring2"]]
+  ),
+    value_box(
+    title = p(glue("Unexplained {signature_class} Mutations")),
+    value = div(glue("{unasigned_mutations}")),
+    showcase = 
+      bs_icon("question-square-fill")
+    ,
+    theme = value_box_themes[["boring2"]]
+  )  
+)
+
+
+
+
+```
