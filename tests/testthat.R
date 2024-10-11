@@ -7,6 +7,6 @@
 # * https://testthat.r-lib.org/articles/special-files.html
 
 library(testthat)
-library(sigreport)
+library(sigstory)
 
-test_check("sigreport")
+test_check("sigstory")
